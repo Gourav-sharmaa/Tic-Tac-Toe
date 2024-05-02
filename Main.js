@@ -24,6 +24,10 @@ function getPlayerInput(player, grid) {
   })
 }
 
+function switchPlayer(player){
+  return player === 'X' ? 'O' : 'X'
+}
+
 function checkWin(grid, player) {
   const conditions =[
     [grid[0][0], grid[0][1], grid[0][2]],
