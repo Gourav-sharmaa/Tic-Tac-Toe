@@ -61,3 +61,11 @@ function nextMove(grid) {
     currentPlayer = switchPlayer(currentPlayer, grid, nextMove)
   }
 }
+function checkDraw(grid) {
+  return grid.flat().every(cell => cell  == null)
+}
+   let grid = initializeGame()
+   let currentPlayer = 'X'
+
+   getPlayerInput(currentPlayer, grid, nextMove)
+
