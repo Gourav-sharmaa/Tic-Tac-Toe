@@ -39,4 +39,11 @@ function checkWin(grid, player) {
     [grid[0][0], grid[1][1], grid[2][2]],
     [grid[2][0], grid[1][1], grid[0][2]],
   ]
+  return conditions.some(conditions =>
+  conditions.every(cell => cell === player)
+)
+}
+function printGrid(grid) {
+  grid.forEach(row => console.log(row.join('|')))
+  Console.log('|')
 }
