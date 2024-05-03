@@ -47,3 +47,17 @@ function printGrid(grid) {
   grid.forEach(row => console.log(row.join('|')))
   Console.log('|')
 }
+
+function nextMove(grid) {
+  printGrid(grid)
+  if (checkWin(grid, currentPlayer)) {
+    console.log(`player ${currnetPlayer} wins!`)
+    rl.close()
+
+  } else if (checkDraw(grid)){
+    console.log("it's a draw!")
+    rl.close()
+  } else {
+    currentPlayer = switchPlayer(currentPlayer, grid, nextMove)
+  }
+}
