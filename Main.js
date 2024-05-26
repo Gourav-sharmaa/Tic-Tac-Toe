@@ -18,7 +18,8 @@ function getPlayerInput(player, grid, callback) {
     // This fuction will allow the the player to enter their move as well as to read the input.
     const [row, col] = input.split(',').map(Number)
     // This is the command to convert the values to the numbers and split the input bu commmas.
-    if ( grid[rew][col] === null){
+
+    if  (Number.isInteger(row) && Number.isInteger(col) && row >= 0 && row < 3 && col >=0 && col < 3 && grid[row][col] === null){
       // This function is to check the cells are empty or null with in the bounds.
       grid [row][col] = player
       // This is for marking the player the action of the players in the selected cells.
@@ -61,7 +62,7 @@ function checkWin(grid, player) {
 function printGrid(grid) {
   grid.forEach(row => console.log(row.join('|')))
   // This function is used to print thr grid of all rows and to replace the nulls values.
-  Console.log('\n')
+  console.log(`\n`)
   // For printing a new line.
 }
 
